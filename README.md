@@ -16,7 +16,7 @@ Secondly, whether you use this as a starter project or copy-paste the files into
 
 Original idea by @nicolai86 from https://github.com/yeoman/yeoman/issues/399
 
-I (@vlad) mainly converted the templates to HAML, and published this for my own projects.  I hope this helps!
+I ([@vlad](http://vlad.github.com)) mainly converted the templates to HAML, and published this for my own projects.  I hope this helps!
 
 ## Issues
 
@@ -26,18 +26,21 @@ You should know that haml.js, the JavaScript implementation of haml used by grun
 - it seems to remove blank attributes, which is why you see the ng-view attribute assigned "see-readme" in index.haml
 - it doesn't support the :plain filter; on the other hand, HTML comments don't appear to need a filter.
 - it mangles the following comment from HTML5 Boilerplate:
-  <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+```html
+  <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->,
+```
   which is why <!-- see readme --> appears in its place.
 
 These are minor annoyances for now.  Ping me if you find that another HAML JavaScript library, like https://github.com/uglyog/clientside-haml-js, is better.
 
 ### Other annoyances
 
-- each individual haml file must be listed in the Gruntfile.js (again, due to grunt-haml).
+- each individual HAML file must be listed in the Gruntfile.js (again, due to grunt-haml).
 
 ## Links
 
-http://yeoman.io
-http://angularjs.org
-https://github.com/andrewrjones/grunt-haml
-https://github.com/creationix/haml-js
+- http://yeoman.io
+- http://angularjs.org
+- https://github.com/andrewrjones/grunt-haml
+- https://github.com/creationix/haml-js
+- http://haml.info
