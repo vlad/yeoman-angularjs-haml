@@ -1,5 +1,7 @@
 module.exports = function( grunt ) {
   'use strict';
+  grunt.loadNpmTasks('grunt-haml');
+
   //
   // Grunt configuration:
   //
@@ -41,6 +43,19 @@ module.exports = function( grunt ) {
       }
     },
 
+    // compile haml files
+    // each file must be listed individually, see the readme
+    haml: {
+      index: {
+        src: "app/index.haml",
+        dest: "app/index.html"
+      },
+      main: {
+        src: "app/views/main.haml",
+        dest: "app/views/main.html"
+      }
+    },
+
     // generate application cache manifest
     manifest:{
       dest: ''
@@ -58,11 +73,20 @@ module.exports = function( grunt ) {
         ],
         tasks: 'compass reload'
       },
+      haml: {
+        files: [
+          'app/*.haml',
+          'app/views/*.haml'
+        ],
+        tasks: 'haml'
+      },
       reload: {
         files: [
+          'app/*.haml',
           'app/*.html',
           'app/styles/**/*.css',
           'app/scripts/**/*.js',
+          'app/views/**/*.haml',
           'app/views/**/*.html',
           'app/images/**/*'
         ],
